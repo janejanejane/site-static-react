@@ -20,15 +20,25 @@ module.exports = {
                 use: ['babel-loader'],
             },
             {
-                test: /(\.css)$/,
+                test: /(\.(s*)css)$/,
                 use: [
                     {
                         loader: 'style-loader'
                     }, 
                     {
                         loader: 'css-loader'
+                    }, 
+                    {
+                        loader: 'sass-loader'
                     }
                 ],
+            },
+            {
+                test: /\.(ttf|eot|svg|woff|woff2)$/,
+                loader: 'file-loader',
+                options: {
+                  name: 'webfonts/[name].[ext]',
+                },
             },
         ],
     },
@@ -43,6 +53,6 @@ module.exports = {
             Components: path.resolve( __dirname, 'src', 'components' ),
             Styles: path.resolve( __dirname, 'src', 'styles' ),
         },
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.css'],
     },
 };
