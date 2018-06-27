@@ -44,7 +44,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            title: 'Main',
+            title: 'Jean Ambait',
+            favicon: path.resolve( __dirname, 'src', 'images' ) + '/favicon.ico',
             template: 'index.hbs',
         })
     ],
